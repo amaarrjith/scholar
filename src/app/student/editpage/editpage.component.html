@@ -1,0 +1,111 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="main-banner" id="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="">
+          <div class="item item-1">
+            <div class="header-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container bootstrap snippets bootdey" *ngFor = "let data of studentarray">
+  <div class="row">
+    <div class="profile-nav col-md-3">
+      <div class="panel">
+        <div class="user-heading round">
+          <a href="#">
+            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+          </a>
+          <h1 style="margin-top: 20px;">{{data.student_firstname}} {{data.student_lastname}}</h1>
+          <p>{{data.email}}</p>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active">
+              <a href="/studentmaster/studentedit">
+                <i class="fa fa-user"></i> Profile </a>
+            </li>
+            <br><br>
+            <li>
+              <a href="/studentmaster/editpage">
+                <i class="fa fa-edit"></i> Edit profile </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <div class="profile-info col-md-9">
+     
+        <!-- -------------------------------------------------------------- -->
+        
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <form (ngSubmit)="submit()">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">First Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" value="{{data.student_firstname}}" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Last Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control"  value="{{data.student_lastname}}" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="email" [(ngModel)]="Update.email" >
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Mobile</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="mobile"  [(ngModel)]="Update.mobile">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">DOB</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="date" class="form-control" name="dob"  [(ngModel)]="Update.dob">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Username</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" name="username"  [(ngModel)]="Update.username">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="button" class="btn btn-primary px-4" value="Save Changes" (click)="submit()">
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+                      
+                  
+        
+      
+    </div>
+  </div>
+</div>

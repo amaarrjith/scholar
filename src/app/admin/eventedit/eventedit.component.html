@@ -1,0 +1,48 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row">
+        
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Event Registration</h4>
+              <p class="card-description">
+                Registration For Events 
+              </p>
+              <form class="forms-sample" (ngSubmit)="submit()">
+                <div class="form-group">
+                  <label for="districtSelect">Choose Subject Name</label>
+                  <select class="form-control" id="districtSelect" name="course" [(ngModel)]="Events.subjectid">
+                    <option *ngFor = "let data of subjectarray" value="{{data.subjectid}}">{{data.subjectname}}</option> 
+                    
+                  
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter Event Name</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" [(ngModel)]="Events.name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter Event Date</label>
+                  <input type="date" class="form-control" id="exampleInputName1" placeholder="Name" name="date" [(ngModel)]="Events.date">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter Event Duration</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="duration" [(ngModel)]="Events.duration">
+                </div>
+                <div class="form-group">
+                  <label for="districtSelect">Choose Event Price</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="price" [(ngModel)]="Events.price">
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+    

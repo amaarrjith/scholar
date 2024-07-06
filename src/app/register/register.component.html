@@ -1,0 +1,184 @@
+<div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="">
+            
+            <div class="item item-3">
+              <div class="header-text">
+                
+                <h2>With Scholar Teachers, Everything Is Easier</h2>
+                <p>Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Request Demo</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="item item-2">
+              <div class="header-text">
+                <span class="category">Best Result</span>
+                <h2>Get the best result out of your effort</h2>
+                <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Request Demo</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item item-3">
+              <div class="header-text">
+                <span class="category">Online Learning</span>
+                <h2>Online Learning helps you save the time</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Request Demo</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
+                  </div>
+                </div>
+              </div> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6  align-self-center">
+          <div class="section-heading">
+            <h6>REGISTER NOW</h6>
+            <h2>Feel free to contact us anytime</h2>
+            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
+            <div class="special-offer">
+              <span class="offer">off<br><em>50%</em></span>
+              <h6>Valide: <em>24 April 2036</em></h6>
+              <h4>Special Offer <em>50%</em> OFF!</h4>
+              <a href="#"><i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-us-content">
+            <form id="contact-form" action="" method="post" (ngSubmit)="submit()">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" name="Firstname" id="name" placeholder="Your First Name..." autocomplete="on" required [(ngModel)]="Students.Firstname">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" name="Lastname" id="name" placeholder="Your Last Name..." autocomplete="on" [(ngModel)]="Students.Lastname">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="" [(ngModel)]="Students.email">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input type="tel" name="contact" id="contact" placeholder="Your Contact Number..." required="" [(ngModel)]="Students.contact">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label style="color: white;font-size: 14px;padding: 15px;font-weight: 300;"> Your DOB : </label>
+                      <input type="date" name="birthday" id="birthday" placeholder="Your Contact Number..." required="" [(ngModel)]="Students.birthday">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                        <select name="state" id="state" required="" style="background-color: rgb(141, 125, 222)" [(ngModel)]="Students.state" (change)="onchange()">
+                        <option value="">Select State</option>
+                        <option *ngFor = "let data of array" value="{{data.stateid}}">{{data.statename}}</option>
+                        
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <select name="district" id="district" required="" style="background-color: rgb(141, 125, 222)" [(ngModel)]="Students.district">
+                        <option value="">Select District</option>
+                        <option *ngFor="let data of locationarray" value="{{data.districtid}}">{{data.districtname}}</option>
+                        
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input type="text" name="address" id="address" placeholder="Your Address..." required="" [(ngModel)]="Students.address">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input type="text" name="pincode" id="address" placeholder="Your Pincode..." required="" [(ngModel)]="Students.pincode">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <select name="course" id="district" required="" style="background-color: rgb(141, 125, 222)" [(ngModel)]="Students.course" (change)="change()">
+                        <option value="">Select Course</option>
+                        <option *ngFor = "let data of coursearray" value="{{data.courseid}}">{{data.coursename}}</option>
+                        
+                        <!-- Add more districts as needed -->
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <select name="subject" id="district" required="" style="background-color: rgb(141, 125, 222)" [(ngModel)]="Students.subject">
+                        <option value="">Select Subject</option>
+                        <option *ngFor = "let data of subjectarray" value="{{data.subjectid}}">{{data.subjectname}}</option>
+                       
+                        <!-- Add more districts as needed -->
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label style="color: white;font-size: 14px;padding: 15px;font-weight: 300;"> Upload Profile Picture : </label>
+                      <input type="file" name="profile_pic" id="profile_pic" accept="image/*" required="" style="
+                      padding: 12px 23px;
+                      text-align: center;
+                  " >
+                    </fieldset>
+                  </div>
+                  
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="text" name="username" id="username" placeholder="Your Username..." required="" [(ngModel)]="Students.username">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6">
+                    <fieldset>
+                      <input type="password" name="password" id="password" placeholder="Your Password..." required="" [(ngModel)]="Students.password">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button style="width:100%;" type="submit" id="form-submit" class="orange-button">REGISTER NOW</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,54 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">State Registration</h4>
+                <p class="card-description">
+                  Registration For State 
+                </p>
+                <form class="forms-sample" (ngSubmit)="statesubmit()">
+                  <div class="form-group">
+                    <label for="exampleInputName1">Enter State Name</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="statename" [(ngModel)]="State.statename">
+                  </div>
+                
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                  <button class="btn btn-light">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">District Registration</h4>
+              <p class="card-description">
+                Registration For District 
+              </p>
+              <form class="forms-sample" (ngSubmit)="dissubmit()">
+                <div class="form-group">
+                  <label for="districtSelect">Choose State Name</label>
+                  <select class="form-control" id="districtSelect" name="stateid" [(ngModel)]="District.stateid">
+                    <option *ngFor = "let data of array" value="{{data.stateid}}">{{data.statename}}</option>
+                    
+                    <!-- Add more options as needed -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter District Name</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="districtname" [(ngModel)]="District.districtname">
+                </div>
+              
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+    

@@ -1,0 +1,153 @@
+/* Container for the entire chat section */
+.container {
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Chat message list */
+.chat {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Chat message item */
+.chat li {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Chat message body */
+.chat .chat-body {
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 80%; /* Adjust max-width based on your design */
+}
+
+/* Styles for messages from students (right side) */
+.chat .left .chat-body {
+  float: right;
+  background-color: #d0fecf; /* Light blue background for student messages */
+  text-align: right; /* Right-align text */
+  margin: 10px;
+  margin-right: 20px;
+}
+
+/* Styles for messages from staff (left side) */
+.chat .right .chat-body {
+  float: left;
+  background-color:white; /* Light grey background for staff messages */
+  text-align: left; /* Left-align text */
+  margin: 10px;
+  margin-left: 20px;
+}
+
+/* Header within chat message (name and time) */
+.chat .header {
+  margin-bottom: 5px;
+}
+
+/* Styling for the primary font (name) */
+.chat .header .primary-font {
+  font-weight: bold;
+}
+
+/* Styling for the small text (time) */
+.chat .header small {
+  font-size: 11px;
+}
+
+/* Date divider style */
+.date-divider {
+  text-align: center;
+  background-color: #fafafa;
+  border-radius: 10px;
+  width: 20%;
+  margin: 0 auto; /* Center the date divider */
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+
+/* Optional: You can also directly use Bootstrap's CSS classes */
+
+/* Style for the chat-box container */
+.chat-box {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+/* Style for the input-group within chat-box */
+.chat-box .input-group {
+  max-width: 100%; /* Ensures input-group spans full width */
+}
+
+/* Style for the form-control (input field) */
+.chat-box .form-control {
+  border: none; /* Removes default border */
+  box-shadow: none; /* Removes default box-shadow */
+  font-size: 16px;
+}
+
+/* Style for the buttons within input-group-append */
+.chat-box .input-group-append {
+  display: flex; /* Ensures buttons are in a row */
+}
+
+/* Style for the buttons (Send and Clear) */
+.chat-box .btn {
+  border-radius: 0px; /* Rounds the corners of the buttons */
+  font-size: 16px;
+  transition: all 0.3s ease; /* Adds smooth transition */
+}
+
+/* Style for the Send button */
+.chat-box .btn-primary {
+  background-color: #7a6ad8; /* Blue color for primary action */
+  border-color: #7a6ad8;
+  color: #fff; /* White text color */
+}
+
+/* Style for the Clear button */
+.chat-box .btn-danger {
+  background-color: #dc3545; /* Red color for danger action */
+  border-color: #dc3545;
+  color: #fff; /* White text color */
+}
+
+/* Hover effect for buttons */
+.chat-box .btn:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+
+/* Profile header styling */
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Profile image styling */
+.profile-header img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Profile text styling */
+.profile-header .ms-3 h5 {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.profile-header .ms-3 small {
+  color: #6c757d;
+}

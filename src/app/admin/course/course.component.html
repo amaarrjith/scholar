@@ -1,0 +1,90 @@
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Course Registration</h4>
+                <p class="card-description">
+                  Registration For Course 
+                </p>
+                <form class="forms-sample" (ngSubmit)="csubmit()">
+                  <div class="form-group">
+                    <label for="exampleInputName1">Enter Course Name</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" [(ngModel)]="Course.name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputDescription">Description</label>
+                    <textarea class="form-control" id="exampleInputDescription" rows="4" placeholder="Description" name="description" [(ngModel)]="Course.description"></textarea>
+                  </div>
+                
+                  <div class="form-group">
+                    <label for="exampleInputImage">Upload Image</label>
+                    <input type="file" class="form-control-file" id="exampleInputImage" name="image">
+                  </div>
+                
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                  <button class="btn btn-light">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Subject Registration</h4>
+              <p class="card-description">
+                Registration For Subject 
+              </p>
+              <form class="forms-sample" (ngSubmit)="ssubmit()">
+                <div class="form-group">
+                  <label for="districtSelect">Choose Course Name</label>
+                  <select class="form-control" id="districtSelect" name="course" [(ngModel)]="Subject.courseid">
+                    <option *ngFor = "let data of coursearray" value="{{data.courseid}}">{{data.coursename}}</option> 
+                    
+                  
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter Subject Name</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="subjectname" [(ngModel)]="Subject.subjectname">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter Subject Fees</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="subjectfees" [(ngModel)]="Subject.subjectfees">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Enter Subject Duration</label>
+                  <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="subjectduration" [(ngModel)]="Subject.subjectduration">
+                </div>
+                <div class="form-group">
+                  <label for="districtSelect">Choose Staff Name</label>
+                  <select class="form-control" id="districtSelect" name="staff" [(ngModel)]="Subject.staff">
+                    <option *ngFor = "let data of staffarray" value="{{data.staffid}}">{{data.firstname}} {{data.lastname}}</option> 
+                    
+                  
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputDescription">Description</label>
+                  <textarea class="form-control" id="exampleInputDescription" rows="4" placeholder="Description" name="description" [(ngModel)]="Subject.description"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputImage">Upload Syllabus</label>
+                  <input type="file" class="form-control-file" id="exampleInputImage" name="syllabus">
+                </div>
+                
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+    

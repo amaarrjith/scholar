@@ -1,0 +1,61 @@
+<div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="">
+            <div class="item item-1">
+              <div class="header-text"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="container1">
+  
+          <form (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                
+                <input type="text" id="name" name="name" [(ngModel)]="Events.name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                
+                <input type="email" id="email" name="email" [(ngModel)]="Events.email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                
+                <input type="tel" id="phone" name="phone" [(ngModel)]="Events.phone" required>
+            </div>
+            <div class="form-group">
+                <label for="event">Event Name:</label>
+                
+                <input type="text" id="event" name="event" [(ngModel)]="Events.event" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Submit" style="width: 100%;">
+            </div>
+        </form>
+        
+        </div>
+    </div>
+    <div class="col-lg-4 align-self-center">
+        <div class="section-heading" *ngFor="let data of eventsarray">
+          <h6>About EVENT</h6>
+          <h2>{{data.eventname}}</h2>
+          <p>{{data.description}}</p>
+          <br><br>
+          <p><b>Duration</b> : {{data.duration}} </p>
+          <p><b>Entry Fees</b> : {{data.price}} </p>
+          <a [routerLink]="['/studentmaster/messagestaff']"><input type="submit" value="Contact Us" style="margin-top: 5%;"></a>
+        </div>
+      </div>
+</div>
+
+

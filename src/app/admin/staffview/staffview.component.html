@@ -1,0 +1,103 @@
+<style>
+  .table td {
+    text-align: center;
+    
+  }
+</style>
+<div class="main-panel">
+<div class="content-wrapper">
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Bordered table</h4>
+        <p class="card-description">
+          Add class <code>.table-bordered</code>
+        </p>
+        <div class="table-responsive pt-3">
+          <table style="text-align:center;text-transform:uppercase;" width="100%" class="table table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  Full Name
+                </th>
+                <th>
+                  Personal Information
+                </th>
+                
+                
+                <th>
+                  Qualification
+                </th>
+                <th>
+                  Gender
+                </th>
+                
+                <th>
+                  Experience
+                </th>
+                
+                <th>
+                  Register Date
+                </th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of staffarray; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  {{data.firstname}} {{data.lastname}}
+                </td>
+                
+                <td>
+                  EMAIL : {{data.email}}<br><br> CONTACT NO : {{data.contactno}}
+                </td>
+                
+                
+                <td>
+                  {{data.qualification}}
+                </td>
+                
+                
+                <td>
+                  {{data.gender}}
+                </td>
+                <td>
+                  {{data.experience}}
+                </td>
+                <td>
+                  {{data.date}}
+                </td>
+                
+               
+                <td *ngIf="data.status === 'NON-ACTIVE'">
+                  <button (click)="activate(data.loginid)" class="btn btn-success">ACTIVATE</button>
+                </td>
+                <td *ngIf="data.status === 'ACTIVE'">
+                  <button (click)="deactivate(data.loginid)" class="btn btn-danger">DE-ACTIVATE</button>
+                </td>                
+                
+
+                <td>
+                  <button [routerLink] = "['/adminmaster/staffedit',data.staffid]" class="btn btn-primary">EDIT</button>
+                </td>
+                <td>
+                  <button (click)="delete(data.staffid)" class="btn btn-danger">DELETE</button>
+                </td>
+              </tr>
+              
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

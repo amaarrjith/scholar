@@ -1,0 +1,73 @@
+<div class="main-panel" style="width: 125%;">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="row">
+          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+            <h3 *ngFor = "let data of staffarray" class="font-weight-bold">Welcome {{data.staff_firstname}} {{data.staff_lastname}}</h3>
+            <h6 class="font-weight-normal mb-0">All systems are running smoothly ! You have <span class="text-primary"> 3 unread alerts ! </span></h6>
+          </div>
+          <div class="col-12 col-xl-4">
+           <div class="justify-content-end d-flex">
+            
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card tale-bg" style="border-radius: 4px;">
+          <div class="card-people mt-auto">
+            <img src="/assets/staff/images/dashboard/people.svg" alt="people">
+            <div class="weather-info">
+              <div class="d-flex">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 grid-margin transparent">
+        <div class="row">
+          <div class="col-md-12 mb-6 stretch-card transparent text-center">
+            <div class="card card-tale"style="border-radius: 4px;">
+              <div class="card-body">
+                <p class="mb-4">My Students</p>
+                <p class="fs-30 mb-2">{{students_count}}</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 mb-6 stretch-card transparent mt-5 text-center">
+            <div class="card card-dark-blue" style="border-radius: 4px;">
+              <div class="card-body">
+                <p class="mb-4">Unread Messages</p>
+                <p class="fs-30 mb-2">{{unread_messages}}</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    
+      
+      
+  </div>
+  <!-- content-wrapper ends -->
+  <!-- partial:partials/_footer.html -->
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+    </div>
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span> 
+    </div>
+  </footer> 
+  <!-- partial -->
+</div>

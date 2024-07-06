@@ -1,0 +1,101 @@
+<div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="">
+            <div class="item item-1">
+              <div class="header-text"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container bootstrap snippets bootdey">
+    <div class="row">
+      <!-- Chat Box Section -->
+      <div class="col-lg-12 bg-white">
+        <div class="profile-header d-flex align-items-center p-3 bg-light rounded mb-4" *ngFor = "let data of staffarray">
+          <img src= "/assets/images/profile.png"  alt="Staff Profile Picture" class="rounded-circle" width="60" height="60">
+          <div class="ms-3">
+            <h5 class="mb-0">{{data.staff_firstname}} {{data.staff_lastname}}</h5>
+            <small style="text-decoration: solid;" class="text-muted">{{data.coursename}} &nbsp; | &nbsp; {{data.subjectname}} </small>
+          </div>
+        </div>
+        <div class="chat-message" style="background-color:#f5f1eb;">
+  
+          <!-- Messages Loop -->
+          <ul class="chat">
+            <!-- Loop through othermessages -->
+            <li *ngFor="let data of othermessages" [ngClass]="{'left': data.sender === 'STUDENT', 'right': data.sender === 'STAFF'}">
+              <div class="chat-body clearfix">
+                <div class="header">
+                  <strong class="primary-font" *ngIf="data.sender === 'STUDENT'">You</strong>
+                  <strong class="primary-font" *ngIf="data.sender === 'STAFF'">{{data.staff_firstname}} {{data.staff_lastname}}</strong>
+                  <small class="pull-right text-muted">
+                    <i class="fa fa-clock-o"></i>&nbsp; &nbsp; {{data.time}}
+                  </small>
+                </div>
+                <p>{{data.messages}}</p>
+              </div>
+            </li>
+          </ul>
+
+          <div *ngIf="yesterdaydate()" class="date-divider">YESTERDAY</div>
+          <ul class="chat">
+            <!-- Loop through yesterdaymessages -->
+            <li *ngFor="let data of yesterdaymessages" [ngClass]="{'left': data.sender === 'STUDENT', 'right': data.sender === 'STAFF'}">
+              <div class="chat-body clearfix">
+                <div class="header">
+                  <strong class="primary-font" *ngIf="data.sender === 'STUDENT'">You</strong>
+                  <strong class="primary-font" *ngIf="data.sender === 'STAFF'">{{data.staff_firstname}} {{data.staff_lastname}}</strong>
+                  <small class="pull-right text-muted">
+                    <i class="fa fa-clock-o"></i>&nbsp; &nbsp; {{data.time}}
+                  </small>
+                </div>
+                <p>{{data.messages}}</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Today's Messages -->
+          <div *ngIf="todaydate()" class="date-divider">TODAY</div>
+          <ul class="chat">
+            <!-- Loop through todaymessages -->
+            <li *ngFor="let data of todaymessages" [ngClass]="{'left': data.sender === 'STUDENT', 'right': data.sender === 'STAFF'}">
+              <div class="chat-body clearfix">
+                <div class="header">
+                  <strong class="primary-font" *ngIf="data.sender === 'STUDENT'">You</strong>
+                  <strong class="primary-font" *ngIf="data.sender === 'STAFF'">{{data.staff_firstname}} {{data.staff_lastname}}</strong>
+                  <small class="pull-right text-muted">
+                    <i class="fa fa-clock-o"></i>&nbsp; &nbsp; {{data.time}}
+                  </small>
+                </div>
+                <p>{{data.messages}}</p>
+              </div>
+            </li>
+          </ul>
+  
+          <!-- Yesterday's Messages -->
+          
+        </div>
+        <!-- Input Box -->
+        <div class="chat-box">
+          <form (ngSubmit)="submit()">
+            <div class="input-group">
+              <input class="form-control rounded-pill border-0 py-4 bg-light" name="message" placeholder="Type your message here" style="border-radius: 30px 0 0 30px;" [(ngModel)]="Send.message">
+              <span class="input-group-append">
+                <button class="btn btn-primary  px-5" type="submit">Send</button>
+                <button (click)="delete()" class="btn btn-danger  px-5" type="button">Clear</button>
+              </span>
+            </div><!-- /input-group -->
+          </form>
+        </div>
+        
+  
+      </div>
+    </div>
+  </div>
+  

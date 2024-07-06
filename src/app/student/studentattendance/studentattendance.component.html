@@ -1,0 +1,102 @@
+<div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="">
+            <div class="item item-1">
+              <div class="header-text"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="services section" id="services" style="margin-top: -200px;">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="main-content">
+              <h2 *ngIf = "attendance_percentage >= 80" ><b style="color:rgb(12, 188, 12)">{{attendance_percentage}}%</b></h2>
+                <h2 *ngIf="attendance_percentage >= 60 && attendance_percentage < 80" style="color: rgb(243, 149, 9);"><b>{{attendance_percentage}}%</b></h2>
+                <h2 *ngIf = "attendance_percentage < 60" ><b style="color: rgb(232, 15, 15);">{{attendance_percentage}}%</b></h2>
+              
+              <p>Your Attendance</p>
+              <div class="main-button">
+                <a href="/studentmaster/attendance#report">View Attendance Report</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="main-content">
+              <h2><b>{{totaldays}}</b></h2>
+              <p>Total Working Days</p>
+              <div class="main-button">
+                <a href="/studentmaster/attendance#report">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="main-content">
+                <h2><b>{{presentdays}}</b></h2>
+                <p>Number of Days Present</p>
+                <div class="main-button">
+                  <a href="/studentmaster/attendance#report">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="services section" id="services" style="margin-top: 0px;">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-lg-12">
+  
+          <!-- Search Form -->
+          <div class="search-form-container">
+            <form id="searchForm" class="search-form" (ngSubmit)="submit()">
+              <div class="form-group">
+                <label for="fromDate">From:</label>
+                <input type="date" id="fromDate" name="fromDate" class="form-control" [(ngModel)]="input.fromDate">
+              </div>
+              <div class="form-group">
+                <label for="toDate">To:</label>
+                <input type="date" id="toDate" name="toDate" class="form-control" [(ngModel)]="input.toDate">
+              </div>
+              <button class="btn-search" type="submit">Search</button>
+              <button style="width:98%;" (click)="refresh()" class="btn btn-danger" type="submit">Clear</button>
+            </form>
+          </div>
+  
+          <div class="container-table" id="report" style="margin-top: -100px;">
+            <div class="table">
+              <div class="table-header" style="background-color:#7a6ad8;">
+                <div class="header__item"><a id="name" class="filter__link" href="#">DATE</a></div>
+                <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">STATUS</a></div>
+              </div>
+              <div class="table-content">  
+                <div class="table-row" *ngFor="let data of attendancehistory">
+                  <div class="table-data">{{data.date}}</div>
+                  <div class="table-data" *ngIf="data.status == 'PRESENT'" style="color: green; font-weight:bold">{{data.status}}</div>
+                  <div class="table-data" *ngIf="data.status == 'ABSENT'" style="color: rgb(255, 0, 0); font-weight:bold">{{data.status}}</div>
+                </div>
+              </div>  
+            </div>
+          </div>
+          
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

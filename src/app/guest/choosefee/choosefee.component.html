@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Dropdown in Bootstrap Card</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .custom-card {
+        width: 300px; /* Set width of the card */
+        margin: auto; /* Center align the card */
+        margin-top: 50px; /* Add top margin for spacing */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add a subtle shadow */
+        border-radius: 8px; /* Rounded corners */
+    }
+
+    .dropdown {
+        width: 100%; /* Full width for dropdown */
+    }
+
+    .dropdown .dropdown-toggle {
+        width: 100%; /* Full width for button */
+        text-align: left; /* Align text left within button */
+        border-radius: 8px; /* Rounded corners */
+    }
+
+    .dropdown-menu {
+        width: 100%; /* Full width for dropdown menu */
+        text-align: center; /* Center align dropdown items */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add a subtle shadow */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card custom-card">
+            <div class="card-body">
+                <h5 class="card-title">Payment Options</h5>
+                <p class="card-text">Please select your payment option below.</p>
+                
+                <!-- Dropdown inside card -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Payment
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" (click)="redirect(subjectfees)" >Pay Full Term Fees ({{subjectfees}})</a>
+                        <a class="dropdown-item" (click)="redirect(termfeesorginal)" >Pay First Term Fees ({{termfeesorginal}})</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
