@@ -1,1 +1,1 @@
-# scholar
+Built a fully functional web portal for educational institution where students and staff can send messages with the impl ementation of chatbox. Students can view there fees details and pay fees while registering. Students can view their attendance in the portal
